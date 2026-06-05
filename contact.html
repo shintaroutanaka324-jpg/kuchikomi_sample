@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>問い合わせ | Open e-learning</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+  <div id="breadcrumb"></div>
+
+  <main class="page-content">
+    <div class="container" style="max-width:40rem">
+      <div class="page-header text-center">
+        <h1>お問い合わせ</h1>
+        <p style="color:var(--gray-600)">ご質問・ご要望はこちらのフォームからお送りください。3営業日以内にご返信いたします。</p>
+      </div>
+
+      <form id="contact-form" class="card card-body">
+        <div class="form-group">
+          <label class="form-label" for="name">お名前 *</label>
+          <input type="text" class="form-input" id="name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">メールアドレス *</label>
+          <input type="email" class="form-input" id="email" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subject">件名 *</label>
+          <select class="select" id="subject" required>
+            <option value="">選択してください</option>
+            <option value="general">一般的なお問い合わせ</option>
+            <option value="review">口コミに関するお問い合わせ</option>
+            <option value="account">アカウントに関するお問い合わせ</option>
+            <option value="report">不適切な投稿の報告</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">お問い合わせ内容 *</label>
+          <textarea class="form-textarea" id="message" required rows="8" placeholder="お問い合わせ内容をご記入ください"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-lg">送信する</button>
+      </form>
+
+      <div class="card card-body mt-8" style="background:var(--blue-50);border-color:#bfdbfe">
+        <h3 style="font-weight:600;margin-bottom:0.75rem">📧 その他の連絡先</h3>
+        <p style="font-size:0.875rem;color:var(--gray-600)">
+          メール: support@openelearning.com<br>
+          電話: 03-1234-5678（平日 10:00〜18:00）<br>
+          所在地: 東京都渋谷区
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      App.renderBreadcrumb([
+        { label: "トップ", path: "index.html" },
+        { label: "問い合わせ" },
+      ]);
+
+      document.getElementById("contact-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        App.showToast("お問い合わせを送信しました。ご返信までしばらくお待ちください。");
+        e.target.reset();
+      });
+    });
+  </script>
+</body>
+</html>

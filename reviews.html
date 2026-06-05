@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>口コミ一覧 | Open e-Learning</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-reviews">
+  <div id="site-header"></div>
+
+  <main>
+    <!-- ページヒーロー -->
+    <section class="reviews-hero">
+      <div class="container reviews-hero-inner">
+        <div class="reviews-hero-text">
+          <nav class="reviews-breadcrumb" aria-label="パンくず">
+            <a href="index.html">ホーム</a>
+            <span class="sep">›</span>
+            <span>口コミ一覧</span>
+          </nav>
+          <h1>口コミ一覧</h1>
+          <p>
+            実際にサービスを受けた方のリアルな口コミをチェックして、
+            あなたに合ったオンライン学習サービスを選びましょう。
+          </p>
+        </div>
+        <div class="reviews-hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop"
+            alt="口コミを読む女性"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 検索・並び替え -->
+    <section class="reviews-toolbar-wrap">
+      <div class="container">
+        <div class="reviews-toolbar">
+          <div class="reviews-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+            </svg>
+            <input
+              type="text"
+              id="filter-search"
+              placeholder="サービス名・講師名・キーワードで検索..."
+              aria-label="口コミを検索"
+            />
+          </div>
+          <select class="select reviews-genre" id="filter-genre" aria-label="ジャンルで絞り込み">
+            <option value="all">すべてのジャンル</option>
+          </select>
+          <select class="select reviews-sort" id="filter-sort" aria-label="並び替え">
+            <option value="date-new">新着</option>
+            <option value="rating-high">高評価</option>
+            <option value="rating-low">低評価</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 一覧 + サイドバー -->
+    <section class="reviews-body">
+      <div class="container reviews-layout">
+        <div class="reviews-main">
+          <p class="reviews-count" id="result-count"></p>
+          <div id="review-list" class="review-list"></div>
+          <div id="empty-state" class="empty-state hidden">
+            <p>該当する口コミが見つかりませんでした</p>
+            <button type="button" class="btn btn-outline mt-4" id="reset-filters">条件をリセット</button>
+          </div>
+          <nav class="pagination" id="pagination" aria-label="ページネーション"></nav>
+        </div>
+
+        <aside class="reviews-sidebar">
+          <div class="sidebar-box sidebar-cta">
+            <h3>さっそく口コミを投稿</h3>
+            <p>あなたの体験が、誰かの学びの選択を助けます</p>
+            <a href="submit-review.html" class="btn btn-primary btn-block">✏️ 口コミを投稿する</a>
+          </div>
+          <div class="sidebar-box">
+            <h3>口コミ投稿について</h3>
+            <ul class="sidebar-guidelines">
+              <li>実際に購入・受講したサービスのみ投稿できます</li>
+              <li>具体的で建設的な内容を心がけてください</li>
+              <li>個人情報や誹謗中傷は禁止です</li>
+            </ul>
+            <a href="faq.html" class="sidebar-link">口コミ投稿ガイドラインを見る →</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/reviews.js"></script>
+</body>
+</html>
